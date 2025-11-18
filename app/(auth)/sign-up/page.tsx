@@ -9,8 +9,8 @@ import {
   PREFERRED_INDUSTRIES,
   RISK_TOLERANCE_OPTIONS,
 } from "@/lib/constant";
-import { useState } from "react";
-import CountrySelectField from "@/components/forms/CountrySelectField";
+import { CountrySelectField } from "@/components/forms/CountrySelectField";
+import FooterLink from "@/components/forms/FooterLink";
 
 const SignUp = () => {
   const {
@@ -76,7 +76,6 @@ const SignUp = () => {
           error={errors.fullName}
           validation={{ required: "Full name is required", minLength: 2 }}
         />
-
         <InputField
           name="email"
           label="Email"
@@ -91,7 +90,6 @@ const SignUp = () => {
             },
           }}
         />
-
         <div>
           <InputField
             name="password"
@@ -137,8 +135,13 @@ const SignUp = () => {
           </div>
         </div>
 
-        {/* Country */}
-
+        <CountrySelectField
+          name="country"
+          label="Country"
+          control={control}
+          error={errors.country}
+          required
+        />
         <SelectField
           name="investmentGoals"
           label="Investment Goals"
@@ -148,7 +151,6 @@ const SignUp = () => {
           error={errors.investmentGoals}
           required
         />
-
         <SelectField
           name="riskTolerance"
           label="Risk Tolerance"
@@ -158,7 +160,6 @@ const SignUp = () => {
           error={errors.riskTolerance}
           required
         />
-
         <SelectField
           name="preferredIndustry"
           label="Preferred Industry"
@@ -175,6 +176,12 @@ const SignUp = () => {
         >
           {isSubmitting ? "Creating Account" : "Start Your Investing Journey"}
         </Button>
+
+        <FooterLink
+          text="Already have an account?"
+          linkText="Sign in"
+          href="/sign-in"
+        />
       </form>
     </>
   );

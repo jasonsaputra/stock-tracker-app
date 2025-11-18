@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import "flag-icons/css/flag-icons.min.css";
 import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -45,8 +46,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         <div className="flex-1 relative">
           <Image
-            src="/assets/images/dashboard.svg"
-            alt="Dashboard Logo"
+            src="/assets/images/dashboard-preview.png"
+            alt="Dashboard Preview"
             width={1440}
             height={1550}
             className="auth-dashboard-preview absolute top-0"
